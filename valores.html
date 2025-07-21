@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nossos Valores - Maffezzolli</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #101400;
+      font-size: 1.1rem;
+      text-align: left;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0;
+      margin-bottom: 5px;
+    }
+
+    .descricao {
+      margin: 5px 0 15px 0;
+      padding-left: 15px;
+      font-style: italic;
+      color: #697268;
+    }
+
+    .foto-flutuante {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 50%;
+      position: absolute;
+      width: 1100px;
+      z-index: 9999;
+      animation: subir 1.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" id="logo" class="nav-item">
+        <h2><i class="material-icons">mood</i>Motivos para o Jacó não trabalhar na Maffezzolli</h2>
+      </a>
+      <ul>
+        <li><a class="nav-item" href="valores.html">Nossos Valores</a></li>
+        <li><a class="nav-item" href="servicos.html">Nossos Serviços</a></li>
+        <li><a class="nav-item" href="funcionarios.html">Funcionários</a></li>
+        <li><a class="nav-item" href="jaco-maffezzolli.html">Jacó pode trabalhar?</a></li>
+        <li><a class="nav-item" href="conta.html">Sua Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="valores">
+      <h2>Nossos Valores</h2>
+      <p>O nosso propósito é único e claro: impedir que o Jacó trabalhe na Maffezzolli. 
+        Para isso, temos alguns valores que são fundamentais para nossa causa:</p>
+      <ul>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-respeito', event)">Respeito pelo Jacó</button>
+          <p id="desc-respeito" class="descricao" style="display: none;">
+            Mesmo que não o desejemos aqui, respeitamos sua existência e seu direito de buscar um emprego... em outro lugar.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-inovacao', event)">Inovação</button>
+          <p id="desc-inovacao" class="descricao" style="display: none;">
+            Estamos sempre desenvolvendo novas estratégias para manter a qualidade e a produtividade — e isso inclui não contratar o Jacó.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-meritocracia', event)">Meritocracia</button>
+          <p id="desc-meritocracia" class="descricao" style="display: none;">
+            Reconhecemos e valorizamos quem entrega resultados. Infelizmente, o histórico do Jacó não colabora com esse princípio.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-compromisso', event)">Compromisso com um ambiente sem o Jacó</button>
+          <p id="desc-compromisso" class="descricao" style="display: none;">
+            Nós prezamos por um ambiente leve, produtivo e sem ruídos desnecessários. E todos sabemos o que o Jacó causaria aqui.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <h5>Somos contra o 
+      <a href="https://www.instagram.com/junior_gomesx/" target="_blank">@junior_gomesx</a>
+      trabalhar na Maffezzolli!
+    </h5>
+  </footer>
+
+  <script>
+    function toggleDescricao(id, evento) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+      soltarImagemFlutuante('./assets/img/jaco-alerta.png', evento);
+    }
+
+    function soltarImagemFlutuante(caminhoImagem, evento) {
+      const img = document.createElement('img');
+      img.src = caminhoImagem;
+      img.className = 'foto-flutuante';
+
+      const x = evento.clientX;
+      const y = evento.clientY;
+
+      img.style.left = `${x - 40}px`;
+      img.style.top = `${y - 40}px`;
+
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

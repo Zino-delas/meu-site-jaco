@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sua Conta - Maffezzolli</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    form {
+      margin-top: 20px;
+      max-width: 400px;
+    }
+
+    input, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .foto-flutuante {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 50%;
+      position: absolute;
+      width: 1100px;
+      z-index: 9999;
+      animation: subir 1.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(1.2);
+      }
+    }
+
+    .descricao {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" id="logo" class="nav-item">
+        <h2><i class="material-icons">mood</i>Motivos para o Jacó não trabalhar na Maffezzolli</h2>
+      </a>
+      <ul>
+        <li><a class="nav-item" href="valores.html">Nossos Valores</a></li>
+        <li><a class="nav-item" href="servicos.html">Nossos Serviços</a></li>
+        <li><a class="nav-item" href="funcionarios.html">Funcionários</a></li>
+        <li><a class="nav-item" href="jaco-maffezzolli.html">Jacó pode trabalhar?</a></li>
+        <li><a class="nav-item" href="conta.html">Sua Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="conta">
+      <h2>Sua Conta</h2>
+      <p class="descricao">Cadastre-se para receber alertas sempre que o Jacó tentar se aproximar da Maffezzolli.</p>
+      <form id="form-conta" onsubmit="enviarFormulario(event)">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" placeholder="Por que você apoia a causa?" rows="4"></textarea>
+        <button type="submit" id="btn-conta">Apoiar a causa</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <h5>Somos contra o 
+      <a href="https://www.instagram.com/junior_gomesx/" target="_blank">@junior_gomesx</a>
+      trabalhar na Maffezzolli!
+    </h5>
+  </footer>
+
+  <script>
+    function toggleDescricao(id, evento) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+      soltarImagemFlutuante('./assets/img/jaco-alerta.png', evento);
+    }
+
+    function soltarImagemFlutuante(caminhoImagem, evento) {
+      const img = document.createElement('img');
+      img.src = caminhoImagem;
+      img.className = 'foto-flutuante';
+
+      const x = evento.clientX;
+      const y = evento.clientY;
+
+      img.style.left = `${x - 40}px`;
+      img.style.top = `${y - 40}px`;
+
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

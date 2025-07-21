@@ -1,0 +1,265 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header{
+    padding: 1.5rem;
+    box-shadow: 0 5px 10px #E4EDF1;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+
+button, a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0 1rem;
+    padding: 0;
+    gap: 1rem;
+}
+
+nav ul a{
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.nav-item{
+    color: #101400;
+    text-decoration: none;
+}
+
+.nav-item:hover{
+    color: #697268;
+}
+
+main{
+    padding: 1rem;
+    min-height: 100dvh;
+}
+
+footer{
+    background-color: #101400;
+    padding: 1rem;
+    color: #fff;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 -5px 10px #E4EDF1;
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#hero{
+    display: flex;
+    color: #101400;
+    border: 5px;
+    padding: 2rem 0;
+    margin: 1rem 0;
+}
+
+#appealing-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#appealing-image > img{
+    width: 100%;
+}
+
+#explainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#explainer > h2,
+#explainer > h4,
+#explainer > h5{
+    margin-bottom: 2rem;
+}
+
+#support-button{
+    margin-top: 2rem;
+    border: none;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101400;
+    color: #fff;
+    border-radius: 35px;
+}
+
+#support-button:hover{
+    background-color: #697268;
+
+}
+
+#support-button > i{
+    padding-top: 5px;
+    font-size: 1.5rem;
+}
+
+#support-button > p{
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px #000;
+}
+
+#thank-you{
+    margin-top: 1rem;
+}
+
+#support-image{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    clip-path: circle();
+}
+
+#valores > ul{
+    font-weight: bold;
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    
+}
+
+#valores > h2,
+#valores > p{
+    margin-bottom: 1rem;
+}
+
+#valores > ul > li{
+    margin-bottom: 0.5rem;
+}
+
+.toggle-btn:hover{
+    color: #697268;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #101400;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+  
+  .descricao {
+    margin: 5px 0 15px 0;
+    padding-left: 15px;
+    font-style: italic;
+    color: #697268;
+  }
+
+  #servicos > ul{
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  #servicos > h2,
+  #servicos > p{
+    margin-bottom: 1rem;
+  }
+
+  #servicos > ul > li{
+    margin-bottom: 0.5rem;
+  }
+
+  #funcionarios > ul{
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  #funcionarios > h2,
+  #funcionarios > p{
+    margin-bottom: 1rem;
+  }
+
+  #funcionarios > ul > li{
+    margin-bottom: 0.5rem;
+  }
+
+  #jaco > ul{
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  #jaco > h2,
+  #jaco > p{
+    margin-bottom: 1rem;
+  }
+
+  #jaco> ul > li{
+    margin-bottom: 0.5rem;
+  }
+
+  #conta > ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  #conta > h2,
+  #conta > p{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  #conta> ul > li{
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  #conta > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #101400;
+  }

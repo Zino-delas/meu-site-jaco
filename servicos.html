@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nossos Serviços - Maffezzolli</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #101400;
+      font-size: 1.1rem;
+      text-align: left;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0;
+      margin-bottom: 5px;
+    }
+
+    .descricao {
+      margin: 5px 0 15px 0;
+      padding-left: 15px;
+      font-style: italic;
+      color: #697268;
+    }
+
+    .foto-flutuante {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 50%;
+      position: absolute;
+      width: 1100px;
+      z-index: 9999;
+      animation: subir 1.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" id="logo" class="nav-item">
+        <h2><i class="material-icons">mood</i>Motivos para o Jacó não trabalhar na Maffezzolli</h2>
+      </a>
+      <ul>
+        <li><a class="nav-item" href="valores.html">Nossos Valores</a></li>
+        <li><a class="nav-item" href="servicos.html">Nossos Serviços</a></li>
+        <li><a class="nav-item" href="funcionarios.html">Funcionários</a></li>
+        <li><a class="nav-item" href="jaco-maffezzolli.html">Jacó pode trabalhar?</a></li>
+        <li><a class="nav-item" href="conta.html">Sua Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="servicos">
+      <h2>Nossos Serviços</h2>
+      <p>Nosso objetivo é claro: manter a excelência sem o Jacó.<br> Para isso, oferecemos os seguintes serviços:</p>
+      <ul>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-consultoria', event)">Consultoria Antijacó</button>
+          <p id="desc-consultoria" class="descricao" style="display: none;">
+            Estratégias para detectar e evitar perfis semelhantes ao do Jacó em processos seletivos.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-monitoramento', event)">Monitoramento de Ambiente</button>
+          <p id="desc-monitoramento" class="descricao" style="display: none;">
+            Sensores comportamentais para garantir que nenhum traço “jacoso” contamine nossa cultura.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-revisao', event)">Revisão de Currículos</button>
+          <p id="desc-revisao" class="descricao" style="display: none;">
+            Um sistema automatizado que apaga currículos enviados por e-mails que contenham “jaco123”.
+          </p>
+        </li>
+        <li>
+          <button class="toggle-btn" onclick="toggleDescricao('desc-treinamentos', event)">Treinamentos Motivacionais</button>
+          <p id="desc-treinamentos" class="descricao" style="display: none;">
+            Capacitação contínua para manter o foco, o respeito e o engajamento... sem o Jacó.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <h5>Somos contra o 
+      <a href="https://www.instagram.com/junior_gomesx/" target="_blank">@junior_gomesx</a>
+      trabalhar na Maffezzolli!
+    </h5>
+  </footer>
+
+  <script>
+    function toggleDescricao(id, evento) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+      soltarImagemFlutuante('./assets/img/jaco-alerta.png', evento);
+    }
+
+    function soltarImagemFlutuante(caminhoImagem, evento) {
+      const img = document.createElement('img');
+      img.src = caminhoImagem;
+      img.className = 'foto-flutuante';
+
+      const x = evento.clientX;
+      const y = evento.clientY;
+
+      img.style.left = `${x - 40}px`;
+      img.style.top = `${y - 40}px`;
+
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivos para o Jacó não trabalhar na Maffezzolli</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" id="logo" class="nav-item">
+        <h2><i class="material-icons">mood</i>Motivos para o Jacó não trabalhar na Maffezzolli</h2>
+      </a>
+      <ul>
+        <li><a class="nav-item" href="valores.html">Nossos Valores</a></li>
+        <li><a class="nav-item" href="servicos.html">Nossos Serviços</a></li>
+        <li><a class="nav-item" href="funcionarios.html">Funcionários</a></li>
+        <li><a class="nav-item" href="jaco-maffezzolli.html">Jacó pode trabalhar?</a></li>
+        <li><a class="nav-item" href="conta.html">Sua Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <section id="explainer">
+        <aside id="appealing-image">
+          <img src="./assets/img/grandes empresas.jpg" alt="Grandes empresas de fastfood.">
+        </aside>
+
+        <h2>Diga Adeus ao Jacó Trabalhando na Maffezzolli!!!</h2>
+
+        <section>
+          <h4>
+            Um multirão de motivos para o Jacó não trabalhar na Maffezzolli!<br>
+            Apoiado pelas maiores empresas de fastfood do mundo, temos a honra de lhe apresentar todos os fatores que desqualificam o Jacó para trabalhar na Maffezzolli.
+          </h4>
+          <h4>
+            Quer se juntar à nossa causa? Clique no botão abaixo e seja um dos nossos apoiadores!
+          </h4>
+
+          <button id="support-button">
+            Apoiar a causa <i class="material-icons">keyboard_arrow_right</i>
+          </button>
+
+          <h5 id="thank-you">Obrigado pelo seu apoio!</h5>
+          <img id="support-image" src="./assets/img/jacó.jpg" alt="É o Jacó!" style="display: none; margin-top: 20px;">
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <h5>Somos contra o
+      <a href="https://www.instagram.com/junior_gomesx/" target="_blank">@junior_gomesx</a>
+      trabalhar na Maffezzolli!
+    </h5>
+  </footer>
+
+  <script>
+    const button = document.getElementById("support-button");
+    const image = document.getElementById("support-image");
+
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      image.style.display = "block";
+
+      // Redireciona após 2 segundos
+      setTimeout(() => {
+        window.location.href = "conta.html";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
